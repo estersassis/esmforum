@@ -37,8 +37,10 @@ test('Testando cadastro de duas respostas', () => {
   modelo.cadastrar_resposta(id_pergunta, '3');
 
   const repostas = modelo.get_respostas(id_pergunta); 
+  const num = modelo.get_num_respostas(id_pergunta); 
 
   expect(repostas.length).toBe(2);
+  expect(num).toBe(2);
   expect(repostas[0].texto).toBe('2');
   expect(repostas[1].texto).toBe('3');
 });
